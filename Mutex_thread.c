@@ -9,7 +9,8 @@ int counter = 0;
 void* mutex_func(){
     
         pthread_mutex_lock( &mutex );
-        printf("Value incremented by Thread: %d is %d\n", pthread_self(),counter++);
+        printf("Thread ID is %ld : ",pthread_self());
+        printf("Value incremented by Thread: %d \n", ++counter);
         pthread_mutex_unlock (&mutex);
 
 }
